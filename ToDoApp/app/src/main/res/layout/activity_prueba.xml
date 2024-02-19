@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.todoapp.viewmodel.UserViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F2F2F2"
+        tools:context=".ui.PruebaActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/to_do_icon2" />
+
+        <EditText
+            android:id="@+id/editTextIdUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa ID"
+            android:inputType="text"
+            android:background="@drawable/rounded_corners"
+            android:padding="12dp"
+            android:layout_marginTop="24dp"
+            android:text="@={viewModel.idUserLiveData}" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:background="@drawable/rounded_corners"
+            android:padding="12dp"
+            android:layout_marginTop="12dp" />
+
+        <!--        <Button-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:onClick="@{() -> viewModel.insertUser()}"-->
+        <!--            android:text="Iniciar Sesion" />-->
+
+        <Button
+            android:id="@+id/btnMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PRUEBA"
+            android:backgroundTint="#236892"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            android:onClick="@{() -> viewModel.getUserById()}" />
+
+
+
+
+
+
+
+
+    </LinearLayout>
+</layout>
